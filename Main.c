@@ -1,12 +1,15 @@
-/*****************************************************************************/
+/*Vinicius Teixeira - Sistemas da informação*/
+/* Olá caro professor, só uma observação quando são inseridos espaços,ou letras(nos campos que não permitem) acaba ocorrendo erro
+na aplicação ela pula pro próximo print*/
 
 #include <stdio.h>
 #include <conio.h>
+#include <locale.h>
 
 int main()
 {
 	
-	
+    setlocale(LC_ALL, "Portuguese");
     
     struct Produto{
         char nomePro[50];
@@ -46,7 +49,7 @@ int main()
         printf("Digite o Endereco da %d loja:\n ",v1+1);
         scanf(" %s", Loja[v1].Endereco);
 
-        printf("Digite o Telefone da %d loja: *n�o digite letras*\n ",v1+1);
+        printf("Digite o Telefone da %d loja: *não digite letras*\n ",v1+1);
         scanf(" %d", &Loja[v1].Telefone_Fixo);
 
         printf("************************************************************\n");
@@ -55,7 +58,7 @@ int main()
             printf("Digite o nome do %d departamento:\n ",v2+1);
             scanf(" %s",Loja[v1].LojaDep[v2].nomeDep);
 
-            printf("Digite o c�digo do %d departamento: *n�o digite letras*\n",v2+1);
+            printf("Digite o código do %d departamento: *não digite letras*\n",v2+1);
             scanf(" %d",&Loja[v1].LojaDep[v2].Cod_Dep);
             
             printf("************************************************************\n");
@@ -65,10 +68,10 @@ int main()
             printf("Digite o nome do %d produto do %d departamento\n",v3+1,v2+1);
             scanf(" %s",Loja[v1].ProDep[v3].nomePro);
 
-            printf("Digite o c�digo do %d produto do %d departamento: *n�o digite letras*\n",v3+1,v2+1);
+            printf("Digite o código do %d produto do %d departamento: *não digite letras*\n",v3+1,v2+1);
             scanf(" %d",&Loja[v1].ProDep[v3].cod_produto);
 
-            printf("Digite o valor do %d produto do %d departamento: *n�o digite letras*\n",v3+1,v2+1);
+            printf("Digite o valor do %d produto do %d departamento: *não digite letras*\n",v3+1,v2+1);
             scanf(" %f",&Loja[v1].ProDep[v3].valor);
 
              printf("************************************************************\n");
@@ -86,15 +89,15 @@ int main()
 
         for(int v2=0;v2<3;v2++){
             printf("O nome do %d departamento inserido foi: %s\n",v2+1, Loja[v1].LojaDep[v2].nomeDep);
-            printf("O c�digo do %d departamento inserido foi: %d\n",v2+1, Loja[v1].LojaDep[v2].Cod_Dep);
+            printf("O código do %d departamento inserido foi: %d\n",v2+1, Loja[v1].LojaDep[v2].Cod_Dep);
 
 
             for(int v3 = 0; v3 < 3;v3++){
 
 
-                printf("O nome do %d Produto �: %s \n",v3+1,Loja[v1].ProDep[v3].nomePro);
-                printf("O c�digo do %d Produto �: %d \n",v3+1,Loja[v1].ProDep[v3].cod_produto);
-                printf("O valor do %d Produto �: %f \n",v3+1,Loja[v1].ProDep[v3].valor);
+                printf("O nome do %d Produto é: %s \n",v3+1,Loja[v1].ProDep[v3].nomePro);
+                printf("O código do %d Produto é: %d \n",v3+1,Loja[v1].ProDep[v3].cod_produto);
+                printf("O valor do %d Produto é: %.2f \n",v3+1,Loja[v1].ProDep[v3].valor);
 
             }
 
@@ -104,8 +107,3 @@ int main()
     return 0;
 
 }
-
-
-
-
-
